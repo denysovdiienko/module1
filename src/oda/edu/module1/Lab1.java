@@ -21,7 +21,9 @@ public class Lab1 {
         String text = new String(Files.readAllBytes(Paths.get("D:\\Java\\harry.txt"))); //read from txt file
         text = text.replaceAll("[^A-Za-z ']", ""); //delete trash
         String[] words = text.split(" ");
-//1st
+
+    //task 1. Find the longest word in the above text.
+
         String longest = "";
         for (String s1 : words) {
             if (s1.length() > longest.length()) {
@@ -29,22 +31,25 @@ public class Lab1 {
             }
         }
         System.out.println("Longest word: " + longest);
-//2nd
-        text = new String(Files.readAllBytes(Paths.get("D:\\Java\\harry.txt")));
-        String[] lines = text.split("\n");
+
+    //task 2. Count the LINES where the word "Harry" is met.
+
+       text = new String(Files.readAllBytes(Paths.get("D:\\Java\\harry.txt")));
+        String[] lines = text.split("\\n");
         int countHarry = 0;
         for (String line : lines) {
             String tempLine = line.replaceAll("[^A-Za-z ']", "");
             String[] tempWords = tempLine.split(" ");
-            for (String temporaryWord : tempWords) {
-                if (temporaryWord.equals("Harry")) {
+                if (line.contains("Harry")) {
                     countHarry++;
+                    //System.out.println("c4et4ik: " + line);
                 }
             }
-        }
         System.out.println("Number of lines where word Harry met : "
                 + countHarry);
 
+
+        //task 3. Take  the array of distinct words from Harry Potter .
         StringBuilder stringOfDistinct = new StringBuilder();
 
         for (String word : words) {
@@ -54,7 +59,7 @@ public class Lab1 {
         }
         String[] distinctWords = stringOfDistinct.toString().split(" ");
 
-//4.  How many distinct words begin from the letter "C".
+        //task 4.  How many distinct words begin from the letter "C".
         int countWordsC = 0;
         for (String word : distinctWords) {
             if (word.charAt(0) == 'C') {
@@ -64,13 +69,13 @@ public class Lab1 {
         System.out.println("Number of words that begin with C is : "
                 + countWordsC);
 
-        //5th create array of hashes
+        //task 5. Create array of hashes
         int[] arrayOfHashes = new int[distinctWords.length];
         for (int i = 0; i < distinctWords.length; i++) {
             arrayOfHashes[i] = distinctWords[i].hashCode();
         }
 
-           // 6th  Count the intersections of hashes.
+        //task 6.  Count the intersections of hashes.
             Arrays.sort(arrayOfHashes);
             int countOfInter = 0;
             for (int i = 0; i < arrayOfHashes.length - 1; i++) {
@@ -81,9 +86,9 @@ public class Lab1 {
             System.out.println("Count of intersections: " + countOfInter);
         }
     }
-/* answers:
+/* Answers:
 Longest word: interestinglooking
-Number of lines where word Harry met : 1213
+Number of lines where word Harry met : 1084
 Number of words that begin with C is : 80
 Count of intersections: 0
 
