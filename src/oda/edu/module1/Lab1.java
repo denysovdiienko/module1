@@ -86,6 +86,7 @@ public class Lab1 {
             System.out.println("Count of intersections: " + countOfInter);
         }
     }
+  //123
 /* Answers:
 Longest word: interestinglooking
 Number of lines where word Harry met : 1084
