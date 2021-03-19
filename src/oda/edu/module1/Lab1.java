@@ -22,7 +22,7 @@ public class Lab1 {
         text = text.replaceAll("[^A-Za-z ']", ""); //delete trash
         String[] words = text.split(" ");
 
-    //task 1. Find the longest word in the above text.
+        //task 1. Find the longest word in the above text.
 
         String longest = "";
         for (String s1 : words) {
@@ -32,19 +32,19 @@ public class Lab1 {
         }
         System.out.println("Longest word: " + longest);
 
-    //task 2. Count the LINES where the word "Harry" is met.
+        //task 2. Count the LINES where the word "Harry" is met.
 
-       text = new String(Files.readAllBytes(Paths.get("D:\\Java\\harry.txt")));
+        text = new String(Files.readAllBytes(Paths.get("D:\\Java\\harry.txt")));
         String[] lines = text.split("\\n");
         int countHarry = 0;
         for (String line : lines) {
             String tempLine = line.replaceAll("[^A-Za-z ']", "");
             String[] tempWords = tempLine.split(" ");
-                if (line.contains("Harry")) {
-                    countHarry++;
-                    //System.out.println("c4et4ik: " + line);
-                }
+            if (line.contains("Harry")) {
+                countHarry++;
+                //System.out.println("c4et4ik: " + line);
             }
+        }
         System.out.println("Number of lines where word Harry met : "
                 + countHarry);
 
@@ -72,21 +72,22 @@ public class Lab1 {
         //task 5. Create array of hashes
         int[] arrayOfHashes = new int[distinctWords.length];
         for (int i = 0; i < distinctWords.length; i++) {
-            arrayOfHashes[i] = distinctWords[i].hashCode();
+            arrayOfHashes[i] = distinctWords[i].hashCode();// kajdaya stroka unikalnaya
         }
 
+
         //task 6.  Count the intersections of hashes.
-            Arrays.sort(arrayOfHashes);
-            int countOfInter = 0;
-            for (int i = 0; i < arrayOfHashes.length - 1; i++) {
-                if (arrayOfHashes[i] == arrayOfHashes[i + 1]) {
-                    countOfInter++;
-                }
+        Arrays.sort(arrayOfHashes);
+        int countOfInter = 0;
+        for (int i = 0; i < arrayOfHashes.length - 1; i++) {
+            if (arrayOfHashes[i] == arrayOfHashes[i + 1]) {
+                countOfInter++;
             }
-            System.out.println("Count of intersections: " + countOfInter);
         }
+        System.out.println("Count of intersections: " + countOfInter);
     }
-  //123
+}
+//123
 /* Answers:
 Longest word: interestinglooking
 Number of lines where word Harry met : 1084
