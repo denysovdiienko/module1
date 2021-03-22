@@ -22,7 +22,9 @@ public class FieldMain {
 
     }
     /*
-    Field{Rectangle{length = 0, width = 0}typeOfField ='garden plot', typeOfProduct ='potato', isPlowed =true}
-    Field{Rectangle{length = 0, width = 0}typeOfField ='plot of land', typeOfProduct =' sunflower', isPlowed =false}
+    Field{Rectangle{length=2, width=5, pricePerSquareMeter=20.0}typeOfField ='garden plot', typeOfProduct ='potato', isPlowed =true}
+    Field{Rectangle{length=2, width=2, pricePerSquareMeter=20.0}typeOfField ='plot of land', typeOfProduct =' sunflower', isPlowed =false}
+    400.0
+    240.0
     */
 }
