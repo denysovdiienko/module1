@@ -11,19 +11,24 @@ import oda.edu.module2_classes.Rectangle;
 import java.util.Objects;
 
 public class Field extends Rectangle {
+    private static final double pricePerSquareMeter = 20;
     private String typeOfField;
     private String typeOfProduct;
     private boolean isPlowed;
 
+
+
+
     //constructors
-    public Field(String typeOfField, String typeOfProduct, boolean isPlowed) {
+    public Field(String typeOfField, String typeOfProduct, boolean isPlowed, double pricePerSquareMeter) {
+        super(pricePerSquareMeter);
         this.typeOfField = typeOfField;
         this.typeOfProduct = typeOfProduct;
         this.isPlowed = isPlowed;
     }
 
     public Field(int length, int width, String typeOfField, String typeOfProduct, boolean isPlowed) {
-        super(length, width);
+        super(length, width, pricePerSquareMeter);
         this.typeOfField = typeOfField;
         this.typeOfProduct = typeOfProduct;
         this.isPlowed = isPlowed;
@@ -82,14 +87,15 @@ public class Field extends Rectangle {
         return Objects.hash(super.hashCode(), getTypeOfField(), getTypeOfProduct(), isPlowed());
     }
 
-    public int fieldPrice() {
-        int getPrice = 0;
-        if (this.isPlowed()) {
-            getPrice = getArea() * 2;
+    public double fieldPrice() {
+        double getPrice = 0;
+        if (this.isPlowed) {
+            getPrice = super.getArea() * pricePerSquareMeter *  2;
         } else if (!this.isPlowed()) {
-            getPrice = getArea() * 3;
+            getPrice = super.getArea() * pricePerSquareMeter * 3;
         }
         return getPrice;
     }
+
 }
 

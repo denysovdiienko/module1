@@ -11,24 +11,36 @@ import java.util.Objects;
 public class Rectangle {
     private int length;
     private int width;
+    private double pricePerSquareMeter;
+
 //klass eto opisanie ob'ektov
-    public Rectangle() {
+    public Rectangle(double pricePerSquareMeter) {
+        this.pricePerSquareMeter = pricePerSquareMeter;
     }
 
-    public Rectangle(int length, int width) {
+    public Rectangle(int length, int width, double pricePerSquareMeter) {
         this.length = length;
         this.width = width;
+        this.pricePerSquareMeter = pricePerSquareMeter;
     }
 //get daet , set vistavlyaet dliny/shiriny.
-    public int getLength() {
+    public int getLength(int i) {
         return length;
+    }
+
+    public double getPricePerSquareMeter() {
+        return pricePerSquareMeter;
+    }
+
+    public void setPricePerSquareMeter(double pricePerSquareMeter) {
+        this.pricePerSquareMeter = pricePerSquareMeter;
     }
 
     public void setLength(int length) {
         this.length = length;
     }
 
-    public int getWidth() {
+    public int getWidth(int i) {
         return width;
     }
 
@@ -38,31 +50,37 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (o == null || getClass() != o.getClass())
-            return false;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         Rectangle rectangle = (Rectangle) o;
-        return getLength() == rectangle.getLength() &&
-                getWidth() == rectangle.getWidth();
+        return getLength(20) == rectangle.getLength(20) &&
+                getWidth(50) == rectangle.getWidth(50) &&
+                Double.compare(rectangle.getPricePerSquareMeter(), getPricePerSquareMeter()) == 0;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getLength(), getWidth());
+        return Objects.hash(getLength(20), getWidth(50), getPricePerSquareMeter());
     }
 
     @Override
     public String toString() {
         return "Rectangle{" +
-                "length = " + length +
-                ", width = " + width +
+                "length=" + length +
+                ", width=" + width +
+                ", pricePerSquareMeter=" + pricePerSquareMeter +
                 '}';
-
-
     }
 
-    public int getArea(){
-        return this.getWidth() * this.getLength();
+    public double getArea(){
+        return this.getWidth(1) * this.getLength(1);
+    }
+
+    private double getLength() {
+        return 0;
+    }
+
+    private double getWidth() {
+        return 0;
     }
 }

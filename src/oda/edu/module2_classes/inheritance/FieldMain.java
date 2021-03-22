@@ -8,11 +8,17 @@ package oda.edu.module2_classes.inheritance;/*
 
 public class FieldMain {
     public static void main(String[] args) {
-        Field field = new Field("garden plot","potato",true);
-        Field field1 = new Field("plot of land", " sunflower" , false);
+        double pricePerSquareMeter = 20;
+        Field field = new Field("garden plot","potato",true, 20);
+        Field field1 = new Field("plot of land", " sunflower" , false, 20);
+        field.setLength(2);
+        field.setWidth(5);
+        field1.setWidth(2);
+        field1.setLength(2);
         System.out.println(field);
         System.out.println(field1);
         System.out.println(field.fieldPrice());
+        System.out.println(field1.fieldPrice());
 
     }
     /*
