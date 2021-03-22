@@ -12,6 +12,8 @@ public class FieldMain {
         Field field1 = new Field("plot of land", " sunflower" , false);
         System.out.println(field);
         System.out.println(field1);
+        System.out.println(field.fieldPrice());
+
     }
     /*
     Field{Rectangle{length = 0, width = 0}typeOfField ='garden plot', typeOfProduct ='potato', isPlowed =true}

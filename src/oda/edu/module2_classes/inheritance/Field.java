@@ -82,4 +82,14 @@ public class Field extends Rectangle {
         return Objects.hash(super.hashCode(), getTypeOfField(), getTypeOfProduct(), isPlowed());
     }
 
+    public int fieldPrice() {
+        int getPrice = 0;
+        if (this.isPlowed()) {
+            getPrice = getArea() * 2;
+        } else if (!this.isPlowed()) {
+            getPrice = getArea() * 3;
+        }
+        return getPrice;
+    }
 }
+
