@@ -81,4 +81,5 @@ public class Field extends Rectangle {
     public int hashCode() {
         return Objects.hash(super.hashCode(), getTypeOfField(), getTypeOfProduct(), isPlowed());
     }
+
 }

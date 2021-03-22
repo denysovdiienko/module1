@@ -10,15 +10,17 @@ import java.time.LocalDate;
 
 public class StudentMain {
     public static void main(String[] args) {
-        Student student = new Student(21, "Denys", "Ovdiienko",
+        Student student = new Student( "Denys", "Ovdiienko",
                 "male", LocalDate.of(1999, 11, 27), "Pushkinska 79",
                 "ukrainian", "ukrainian", "1234567890",
                 false, 196, 77, "Ukraine", "Kharkiv", "Pushkinska 79",
                 "KN-M720", "PIITU", "NTU KhPI", "KN", "Software Engineering",
                 "Master", false, true, "12345356", "daily form");
         System.out.println(student.toString());
+        System.out.println(student.getAge());
+        System.out.println(student.isAdult()); //=>18 true, <18 false
     }
-   /* Student{Person{age =21, firstName ='Denys', lastName ='Ovdiienko', sex ='male', dateOfBirth =1999-11-27,
+   /* Student{Person{firstName ='Denys', lastName ='Ovdiienko', sex ='male', dateOfBirth =1999-11-27,
             addressOfLiving ='Pushkinska 79', nationality ='ukrainian', citizenship ='ukrainian',
             identificationNumber ='1234567890', isMarried =false, height =196.0, weight =77.0,
             country ='Ukraine', city ='Kharkiv', street = 'Pushkinska 79'}group ='KN-M720',

@@ -7,14 +7,14 @@ package oda.edu.module2_classes.inheritance;/*
 */
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
 public class Person {
-    private int age;
     private String firstName;
     private String lastName;
     private String sex;
-    private LocalDate dateOfBirth;
+    private LocalDate dateOfBirth;//vmesto age
     private String addressOfLiving;
     private String nationality;
     private String citizenship;
@@ -26,10 +26,9 @@ public class Person {
     private String city;
     private String street;
 
-    public Person(int age, String firstName, String lastName, String sex, LocalDate dateOfBirth,
+    public Person( String firstName, String lastName, String sex, LocalDate dateOfBirth,
                   String addressOfLiving, String nationality, String citizenship, String identificationNumber,
                   boolean isMarried, double height, double weight, String country, String city, String street) {
-        this.age = age;
         this.firstName = firstName;
         this.lastName = lastName;
         this.sex = sex;
@@ -47,11 +46,13 @@ public class Person {
     }
 
     public int getAge() {
-        return age;
+        return (int) ChronoUnit.YEARS.between(this.getDateOfBirth(),LocalDate.now());
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public boolean isAdult(){
+        boolean result;
+        result = this.getAge() >= 18;
+        return result;
     }
 
     public String getFirstName() {
@@ -190,13 +191,13 @@ public class Person {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getAge(), getFirstName(), getLastName(), getSex(), getDateOfBirth(), getAddressOfLiving(), getNationality(), getCitizenship(), getIdentificationNumber(), isMarried(), getHeight(), getWeight(), getCountry(), getCity(), getStreet());
+        return Objects.hash(getAge(), getFirstName(), getLastName(), getSex(), getDateOfBirth(), getAddressOfLiving(),
+                getNationality(), getCitizenship(), getIdentificationNumber(), isMarried(), getHeight(), getWeight(), getCountry(), getCity(), getStreet());
     }
 
     @Override
     public String toString() {
         return "Person{" +
-                "age =" + age +
                 ", firstName ='" + firstName + '\'' +
                 ", lastName ='" + lastName + '\'' +
                 ", sex ='" + sex + '\'' +
@@ -213,4 +214,6 @@ public class Person {
                 ", street = '" + street + '\'' +
                 '}';
     }
+
+
 }

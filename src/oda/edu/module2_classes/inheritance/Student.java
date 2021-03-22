@@ -26,18 +26,18 @@ public class Student extends Person {
                    String nationality, String citizenship, String identificationNumber, boolean isMarried, double height,
                    double weight, String country, String city, String street) {
 
-        super(age, firstName, lastName, sex, dateOfBirth, addressOfLiving, nationality,
+        super( firstName, lastName, sex, dateOfBirth, addressOfLiving, nationality,
                 citizenship, identificationNumber, isMarried, height, weight, country, city, street);
     }
 
-    public Student(int age, String firstName, String lastName, String sex, LocalDate dateOfBirth, String addressOfLiving,
+    public Student( String firstName, String lastName, String sex, LocalDate dateOfBirth, String addressOfLiving,
                    String nationality, String citizenship, String identificationNumber,
                    boolean isMarried, double height, double weight, String country, String city,
                    String street, String group, String chair, String university, String department,
                    String specialty, String academicDegree, boolean isOnScholarship, boolean livesInDormitory,
                    String studentCardId, String learningFrom) {
 
-        super(age, firstName, lastName, sex, dateOfBirth, addressOfLiving, nationality, citizenship, identificationNumber, isMarried, height, weight, country, city, street);
+        super( firstName, lastName, sex, dateOfBirth, addressOfLiving, nationality, citizenship, identificationNumber, isMarried, height, weight, country, city, street);
         this.group = group;
         this.chair = chair;
         this.university = university;
