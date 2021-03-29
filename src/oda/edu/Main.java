@@ -1,11 +1,13 @@
 package oda.edu;
 
 import oda.edu.module2_classes.RectangularBox;
+import oda.edu.module2_classes.factory.Rectangle1;
+import oda.edu.module2_classes.factory.RectangleFactory;
 
 public class Main {
 
     public static void main(String[] args) {
-        RectangularBox q1 = new RectangularBox(6,2,5);
+    /*    RectangularBox q1 = new RectangularBox(6,2,5);
         RectangularBox q2 = new RectangularBox();
 
         q2.setSideA(10);
@@ -22,6 +24,11 @@ public class Main {
         System.out.println("Square of Rectangle : " + q2.Square());
         System.out.println("Volume 2 of Rectangle : " + q2.Volume());
         System.out.println("Rectangle 2 Diagonal Length : " + q2.Diagonal());
+*/
+        Rectangle1 r1 = new Rectangle1(3,4);
+        Rectangle1 r11 = RectangleFactory.create(3,4);
+        System.out.println(r1);
+        System.out.println(r11);
 
     }
 }
