@@ -6,9 +6,11 @@ package oda.edu.module2_classes;/*
   @since 17.03.2021 - 19.33
 */
 
+import oda.edu.module2_classes.polymorphism.interfaces.IGeomtry;
+
 import java.util.Objects;
 
-public class Rectangle {
+public class Rectangle implements IGeomtry {
     private int length;
     private int width;
     private double pricePerSquareMeter;
@@ -23,7 +25,11 @@ public class Rectangle {
         this.width = width;
         this.pricePerSquareMeter = pricePerSquareMeter;
     }
-//get daet , set vistavlyaet dliny/shiriny.
+
+    public Rectangle(double sideA, double sideB) {
+    }
+
+    //get daet , set vistavlyaet dliny/shiriny.
     public int getLength(int i) {
         return length;
     }
@@ -81,6 +87,16 @@ public class Rectangle {
     }
 
     private double getWidth() {
+        return 0;
+    }
+
+    @Override
+    public double getPerimeter() {
+        return 0;
+    }
+
+    @Override
+    public double getSquare() {
         return 0;
     }
 }

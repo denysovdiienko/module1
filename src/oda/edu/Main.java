@@ -1,9 +1,8 @@
 package oda.edu;
 
-import oda.edu.module2_classes.RectangularBox;
-import oda.edu.module2_classes.factory.Rectangle1;
-import oda.edu.module2_classes.factory.RectangleFactory;
+import oda.edu.module2_classes.factory.FigureFactory;
 import oda.edu.module2_classes.polymorphism.RectangularBox1;
+import oda.edu.module2_classes.polymorphism.interfaces.IGeomtry;
 
 public class Main {
 
@@ -30,12 +29,25 @@ public class Main {
         Rectangle1 r11 = RectangleFactory.create(3,4);
         System.out.println(r1);
         System.out.println(r11);*/
+
         RectangularBox1 q1 = new RectangularBox1(10,6,5);
         System.out.println(q1);
         System.out.println(q1.toJSON());
         System.out.println(q1.toXML());
         System.out.println(q1.getSquare());
         System.out.println(q1.getPerimeter());
+
+        IGeomtry d1 = FigureFactory.create(10,5,2);
+
+        System.out.println(d1);
+
+/*RectangularBox1{sideA=10.0, sideB=6.0, height=5.0}
+RectangularBox1{"sideA":10.0,"sideB":6.0,"sideD":5.0}
+<RectangularBox1> + <sideA>10.0</sideA> + <sideB>6.0</sideB> + <height>5.0</height></RectangularBox1>
+280.0
+32.0
+RectangularBox1{sideA=10.0, sideB=5.0, height=2.0}
+*/
 
     }
 }
