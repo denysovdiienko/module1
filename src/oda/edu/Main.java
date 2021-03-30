@@ -3,6 +3,7 @@ package oda.edu;
 import oda.edu.module2_classes.RectangularBox;
 import oda.edu.module2_classes.factory.Rectangle1;
 import oda.edu.module2_classes.factory.RectangleFactory;
+import oda.edu.module2_classes.polymorphism.RectangularBox1;
 
 public class Main {
 
@@ -25,10 +26,16 @@ public class Main {
         System.out.println("Volume 2 of Rectangle : " + q2.Volume());
         System.out.println("Rectangle 2 Diagonal Length : " + q2.Diagonal());
 */
-        Rectangle1 r1 = new Rectangle1(3,4);
+        /*Rectangle1 r1 = new Rectangle1(3,4);
         Rectangle1 r11 = RectangleFactory.create(3,4);
         System.out.println(r1);
-        System.out.println(r11);
+        System.out.println(r11);*/
+        RectangularBox1 q1 = new RectangularBox1(10,6,5);
+        System.out.println(q1);
+        System.out.println(q1.toJSON());
+        System.out.println(q1.toXML());
+        System.out.println(q1.getSquare());
+        System.out.println(q1.getPerimeter());
 
     }
 }
