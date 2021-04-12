@@ -19,15 +19,18 @@ public class FilesManagement {
         final String [] lines = logs.split("\n");
         System.out.println( "total number of logs(lines): " + lines.length);
         System.out.println("-----------Use previous skills - String.split--------------------------");
-        LocalDateTime finish = LocalDateTime.now();
-        System.out.println("Time spent : " + ChronoUnit.MILLIS.between(start,finish) + " mss");
-
 
         int counter = 0;
         for (int i = 0; i <lines.length ; i++) {
             if(lines[i].contains("ERROR")) counter++;
         }
         System.out.println("Number of errors:   " + counter);
+
+        LocalDateTime finish = LocalDateTime.now();
+        System.out.println("Time spent : " + ChronoUnit.MILLIS.between(start,finish) + " milliseconds");
+
+
+
         System.out.println("-------------- Use Files.lines.-----------------");
 
         start = LocalDateTime.now();
@@ -36,6 +39,15 @@ public class FilesManagement {
 
 
         finish = LocalDateTime.now();
-        System.out.println("Time spent : " +ChronoUnit.MILLIS.between(start,finish) + "  mss");
+        System.out.println("Time spent : " +ChronoUnit.MILLIS.between(start,finish) + "  milliseconds");
     }
 }
+/*total number of logs(lines): 2845607
+-----------Use previous skills - String.split--------------------------
+Number of errors:   361
+Time spent : 16516 milliseconds
+-------------- Use Files.lines.-----------------
+Number of errors:   361
+Time spent : 4567  milliseconds
+
+Process finished with exit code 0*/
